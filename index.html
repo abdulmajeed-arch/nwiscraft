@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NWIS CRAFT | Official School SMP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4ade80;
+            --primary-dark: #166534;
+            --bg: #050705;
+            --surface: #111811;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(74, 222, 128, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at 50% -20%, var(--primary-dark), transparent 50%);
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: center; gap: 20px; margin-bottom: 60px; }
+        nav a { color: #888; text-decoration: none; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
+
+        header { text-align: center; margin-bottom: 80px; }
+        .school-badge { border: 1px solid var(--primary); color: var(--primary); padding: 5px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px; display: inline-block; }
+        h1 { font-size: clamp(3rem, 10vw, 6rem); font-weight: 800; letter-spacing: -3px; line-height: 1; margin-bottom: 20px; }
+        
+        .main-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
+
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 40px; position: relative; overflow: hidden; }
+        .card h2 { font-size: 1.8rem; margin-bottom: 20px; color: #fff; }
+
+        /* Device Guide Styling */
+        .device-box { background: rgba(0,0,0,0.4); padding: 20px; border-radius: 16px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        .device-box h3 { color: var(--primary); font-size: 1rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .step-list { list-style: none; font-size: 0.9rem; color: #94a3b8; }
+        .step-list li { margin-bottom: 8px; padding-left: 15px; position: relative; }
+        .step-list li::before { content: "•"; position: absolute; left: 0; color: var(--primary); }
+
+        /* Command Chips */
+        .cmd { font-family: 'JetBrains Mono', monospace; background: #000; color: #facc15; padding: 2px 6px; border-radius: 4px; font-size: 0.85rem; }
+
+        /* Plugin Grid Improved */
+        .p-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .p-item { background: var(--glass); padding: 10px; border-radius: 10px; font-size: 0.8rem; border: 1px solid var(--border); }
+        .p-item b { color: var(--primary); display: block; }
+
+        /* Support Section */
+        .contact-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; background: linear-gradient(to right, var(--primary-dark), transparent); padding: 40px; border-radius: 24px; margin-top: 40px; }
+        .wa-button { background: #25d366; color: #000; padding: 15px 30px; border-radius: 12px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .wa-button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
+
+        .footer { text-align: center; padding: 80px 0; color: #444; font-size: 0.8rem; }
+
+        .copy-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #000; padding: 10px 20px; border-radius: 50px; font-weight: 800; display: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav>
+        <a href="#join">How to Join</a>
+        <a href="#features">Features</a>
+        <a href="#rules">Rules</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header>
+        <div class="school-badge">New World International School</div>
+        <h1>NWIS CRAFT</h1>
+        <p style="color: #666; font-size: 1.2rem;">Official 24/7 Modded SMP • PaperMC Engine</p>
+    </header>
+
+    <div class="main-grid">
+        <div class="card" id="join" style="grid-column: span 1;">
+            <h2>How to Join</h2>
+            
+            <div class="device-box">
+                <h3>💻 PC (Java Edition)</h3>
+                <ul class="step-list">
+                    <li>Launch Minecraft <b>1.20.1</b> (or latest).</li>
+                    <li>Multiplayer > Add Server.</li>
+                    <li>Address: <span class="cmd" style="cursor:pointer" onclick="copy('13.50.44.211')">13.50.44.211</span></li>
+                    <li>Click Done and Connect.</li>
+                </ul>
+            </div>
+
+            <div class="device-box">
+                <h3>📱 Mobile (iOS/Android)</h3>
+                <ul class="step-list">
+                    <li>Play > Servers > Add Server.</li>
+                    <li>Name: <b>NWIS CRAFT</b></li>
+                    <li>IP: <b>13.50.44.211</b></li>
+                    <li>Port: <span class="cmd">19132</span></li>
+                </ul>
+            </div>
+
+            <div class="device-box">
+                <h3>🎮 Console (PS4/5, Xbox, Switch)</h3>
+                <ul class="step-list">
+                    <li>Download <b>BedrockTogether</b> app on your phone.</li>
+                    <li>Enter Server IP and Port 19132 in the app.</li>
+                    <li>On Console, go to <b>Friends</b> tab.</li>
+                    <li>Join the "LAN Server" that appears.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" id="features">
+            <h2>Features & Plugins</h2>
+            <p style="margin-bottom: 20px; font-size: 0.9rem; color: #888;">Complete technical manifest from NWIS Craft screenshots:</p>
+            <div class="p-grid">
+                <div class="p-item"><b>Veinminer</b>Break entire tree/ore veins.</div>
+                <div class="p-item"><b>BetterEconomy</b>Player-run money system.</div>
+                <div class="p-item"><b>Jobs Reborn</b>Earn coins via /jobs.</div>
+                <div class="p-item"><b>BetterTPA</b>Ask to teleport to others.</div>
+                <div class="p-item"><b>SkinsRestorer</b>Shows skins on all versions.</div>
+                <div class="p-item"><b>UltimateHomes</b>Save your base with /sethome.</div>
+                <div class="p-item"><b>LoginSecurity</b>Pass-protect your account.</div>
+                <div class="p-item"><b>GeyserMC</b>Cross-play compatibility.</div>
+                <div class="p-item"><b>ViaBackwards</b>Join with older versions.</div>
+                <div class="p-item"><b>PVPManager</b>Anti-combat logging system.</div>
+            </div>
+            <div style="margin-top: 25px; border-top: 1px solid var(--border); padding-top: 15px;">
+                <p><b>Useful Commands:</b></p>
+                <p><span class="cmd">/jobs browse</span> | <span class="cmd">/tpa [name]</span></p>
+                <p><span class="cmd">/sethome</span> | <span class="cmd">/spawn</span></p>
+            </div>
+        </div>
+
+        <div class="card" id="rules">
+            <h2>Server Rules</h2>
+            <ul class="step-list" style="color: #eee;">
+                <li><b>No Griefing:</b> Do not destroy others' builds.</li>
+                <li><b>Respect:</b> No bullying or toxic chat behavior.</li>
+                <li><b>Fair Play:</b> No hacking, X-raying, or cheating.</li>
+                <li><b>English/Arabic Only:</b> Keep chat understandable for all.</li>
+                <li><b>Whitelist:</b> Contact admin if you cannot join.</li>
+            </ul>
+            <div style="margin-top: 20px; padding: 15px; background: rgba(255,0,0,0.1); border-radius: 12px; font-size: 0.8rem; border: 1px solid rgba(255,0,0,0.2);">
+                ⚠️ Breaking rules results in an immediate ban from the NWIS network.
+            </div>
+        </div>
+
+        <div class="card contact-flex" id="contact" style="grid-column: 1 / -1;">
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="margin-bottom: 10px;">Join the Community</h2>
+                <p>Get whitelisted, report bugs, or chat with other students on our official WhatsApp.</p>
+                <div style="margin: 20px 0;">
+                    <p style="font-size: 0.7rem; color: var(--primary); font-weight: 800; text-transform: uppercase;">Admin WhatsApp</p>
+                    <p style="font-size: 1.8rem; font-weight: 800;">+966 50 220 9810</p>
+                </div>
+                <a href="https://chat.whatsapp.com/Lg6H0gHid636yhSlDnnofs" class="wa-button">JOIN WHATSAPP GROUP</a>
+            </div>
+            <div style="flex: 1; min-width: 300px; background: rgba(0,0,0,0.2); padding: 30px; border-radius: 20px;">
+                <p><b>Technical Specs:</b></p>
+                <p style="font-size: 0.85rem; color: #888;">
+                    Powered by PaperMC v1.20.1<br>
+                    Hosted on Dedicated Cloud Hardware<br>
+                    Uptime: 99.9% 24/7<br>
+                    Region: Middle East / Saudi Arabia
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 NWIS CRAFT • New World International School • Managed by NWIS Admins
+    </div>
+</div>
+
+<div class="copy-toast" id="toast">IP COPIED!</div>
+
+<script>
+    function copy(text) {
+        navigator.clipboard.writeText(text);
+        const toast = document.getElementById('toast');
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 2000);
+    }
+</script>
+
+</body>
+</html>
